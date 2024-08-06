@@ -23,8 +23,8 @@ const YouTubePlayer: React.FC<YouTubePlayerProps> = ({ videoId }) => {
       if (playerRef.current) return;
 
       playerRef.current = new YT.Player('youtube-player', {
-        height: '390',
-        width: '640',
+        height: 'auto',
+        width: 'auto',
         videoId,
         playerVars: {
           'playsinline': 1
