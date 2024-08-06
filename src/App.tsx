@@ -22,14 +22,19 @@ function App() {
 
   return (
     <>
-      <div>
-        <div>
+        <div className="bot-mini-app" style={{
+          position: 'absolute', 
+          top: '30%',
+          bottom: '30%', 
+          left: 0, 
+          right: 0,
+          }} 
+        >
           <YouTubePlayer videoId='qbpJpO-xjsc'/>
-          <div>
+          {/* <div>
             <button onClick={shareVedio}>分享视频</button>
-          </div>
+          </div> */}
         </div>
-      </div>
     </>
   )
 }
