@@ -12,6 +12,7 @@ declare global {
 
 const YouTubePlayer: React.FC<YouTubePlayerProps> = ({ videoId }) => {
   const playerRef = useRef<YT.Player | null>(null);
+  const playerContainerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const tag = document.createElement('script');
@@ -22,18 +23,20 @@ const YouTubePlayer: React.FC<YouTubePlayerProps> = ({ videoId }) => {
     const onYouTubeIframeAPIReady = () => {
       if (playerRef.current) return;
 
-      playerRef.current = new YT.Player('youtube-player', {
-        height: 'auto',
-        width: 'auto',
-        videoId,
-        playerVars: {
-          'playsinline': 1
-        },
-        events: {
-          'onReady': onPlayerReady,
-          'onStateChange': onPlayerStateChange
-        }
-      });
+      if (playerContainerRef.current) {
+        playerRef.current = new YT.Player('youtube-player', {
+            height: '100%',
+            width: '100%',
+            videoId,
+            playerVars: {
+                'playsinline': 1
+            },
+            events: {
+                'onReady': onPlayerReady,
+                'onStateChange': onPlayerStateChange
+            }
+          });
+      }
     };
 
     const onPlayerReady = (event: YT.PlayerEvent) => {
@@ -61,7 +64,23 @@ const YouTubePlayer: React.FC<YouTubePlayerProps> = ({ videoId }) => {
   }, [videoId]);
 
   return (
-    <div id="youtube-player" />
+    <div
+      ref={playerContainerRef}
+      style={{
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        position: 'absolute',
+        width: '100%',
+        height: '100%',
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0
+      }}
+    >
+      <div id="youtube-player" style={{ width: '100%', height: '100%' }} />
+    </div>
   );
 };
 

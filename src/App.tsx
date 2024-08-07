@@ -22,21 +22,20 @@ function App() {
   return (
     <>
         <div className="bot-mini-app" style={{
-          display: 'flex', // 启用 Flexbox
-          justifyContent: 'center', // 水平居中
-          alignItems: 'center', // 垂直居中
-          position: 'absolute', 
-          width: 'auto',
-          top: '30%',
-          bottom: '30%', 
-          left: 0, 
-          right: 0,
+         display: 'flex',
+         flexDirection: 'column',
+         justifyContent: 'center',
+         alignItems: 'center',
+         position: 'absolute',
+         top: '30%',
+         bottom: '30%',
+         left: 0,
+         right: 0,
+         flexGrow: 1,
+         flexBasis: 'auto'
           }} 
         >
           <YouTubePlayer videoId='qbpJpO-xjsc'/>
-          {/* <div>
-            <button onClick={shareVedio}>分享视频</button>
-          </div> */}
         </div>
     </>
   )
