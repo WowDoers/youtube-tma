@@ -26,6 +26,7 @@ function App() {
           justifyContent: 'center', // 水平居中
           alignItems: 'center', // 垂直居中
           position: 'absolute', 
+          width: 'auto',
           top: '30%',
           bottom: '30%', 
           left: 0, 
