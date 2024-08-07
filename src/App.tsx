@@ -1,4 +1,5 @@
 import './App.css'
+import ShareSVG from './components/share'
 import YouTubePlayer from './pages/vedio/YoutubePlayer'
 
 function App() {
@@ -22,21 +23,34 @@ function App() {
   return (
     <>
         <div className="bot-mini-app" style={{
-         display: 'flex',
-         flexDirection: 'column',
-         justifyContent: 'center',
-         alignItems: 'center',
-         position: 'absolute',
-         top: '30%',
-         bottom: '30%',
-         left: 0,
-         right: 0,
-         flexGrow: 1,
-         flexBasis: 'auto'
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          position: 'absolute',
+          top: '50%',
+          left: '50%',
+          transform: 'translate(-50%, -72%)', // 水平和垂直方向上居中
+          width: '100%', // 或者设置为具体的宽度
+          height: '70%', // 或者设置为具体的宽度
           }} 
         >
           <YouTubePlayer videoId='qbpJpO-xjsc'/>
-        </div>
+      </div>
+      <div  className="bot-mini-app-share" style={{
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          position: 'absolute',
+          top: '50%',
+          left: '50%',
+          transform: 'translate(-50%, -12%)', // 水平和垂直方向上居中
+          width: '100%', // 或者设置为具体的宽度
+          height: '70%', // 或者设置为具体的宽度
+          }}>
+        <button style={{marginTop: '20px',}}>
+          分享得积分 <ShareSVG/>
+        </button>
+      </div>
     </>
   )
 }
