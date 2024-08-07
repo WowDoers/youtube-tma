@@ -22,6 +22,9 @@ function App() {
   return (
     <>
         <div className="bot-mini-app" style={{
+          display: 'flex', // 启用 Flexbox
+          justifyContent: 'center', // 水平居中
+          alignItems: 'center', // 垂直居中
           position: 'absolute', 
           top: '30%',
           bottom: '30%', 

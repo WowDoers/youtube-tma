@@ -61,13 +61,7 @@ const YouTubePlayer: React.FC<YouTubePlayerProps> = ({ videoId }) => {
   }, [videoId]);
 
   return (
-    <div id="youtube-player" className="bot-mini-app" style={{
-        position: 'absolute', 
-        top: '30%',
-        bottom: '30%', 
-        left: 0, 
-        right: 0,
-        }} />
+    <div id="youtube-player" />
   );
 };
 
